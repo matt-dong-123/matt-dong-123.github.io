@@ -19,14 +19,14 @@ function App() {
       </header>
       <section>
         <h2>About</h2>
-        <textarea placeholder="Add your bio here"></textarea>
+        <p>Hi, I'm Matt. I like to do random stuff. I dunno, maybe do some biotech, econ, and random small utilities from time to time.</p>
       </section>
       <section>
         <h2>Most Starred Repositories</h2>
         <div className="repos">
-          {repos.map(repo => (
+          {repos.map((repo, index) => (
             <div key={repo.id} className="repo">
-              <h3><a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a></h3>
+              <h3>#{index + 1} <a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a></h3>
               <p>{repo.description || 'No description'}</p>
               <span>⭐ {repo.stargazers_count} | {repo.language}</span>
             </div>
@@ -35,8 +35,7 @@ function App() {
       </section>
       <section>
         <h2>Contact</h2>
-        <input type="email" placeholder="Email" />
-        <input type="text" placeholder="LinkedIn" />
+        <p>Email: bruckheim@proton.me</p>
       </section>
     </div>
   )
