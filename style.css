@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    border-bottom: 3px solid #61dafb;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #cccccc;
+    margin-top: 30px;
+    font-size: 1.8em;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.repos {
+    margin: 40px 0;
+}
+
+.contact {
+    background: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.repo-item {
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #222222;
+    transition: box-shadow 0.3s ease;
+}
+
+.repo-item:hover {
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+}
+
+.repo-item h3 {
+    margin-top: 0;
+    color: #61dafb;
+}
+
+.repo-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.repo-item a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+}
