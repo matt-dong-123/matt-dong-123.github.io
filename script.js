@@ -2,9 +2,10 @@ async function fetchRepos() {
     try {
         const response = await fetch('https://api.github.com/users/matt-dong-123/repos');
         const repos = await response.json();
-        repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+        const filteredRepos = repos.filter(repo => repo.stargazers_count > 0);
+        filteredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
         const reposList = document.getElementById('repos-list');
-        repos.forEach(repo => {
+        filteredRepos.forEach(repo => {
             const repoDiv = document.createElement('div');
             repoDiv.className = 'repo-item';
             repoDiv.innerHTML = `
