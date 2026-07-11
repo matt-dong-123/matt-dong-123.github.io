@@ -142,11 +142,6 @@ install_yazi_extensions() {
     ya pkg install
 }
 
-install_gh_extensions() {
-    log "${green}Installing gh extensions${no_color}"
-    gh extension install dlvhdr/gh-dash || die "${red}Failed to install${no_color}"
-}
-
 initialize() {
     mkdir -p "$HOME/notes" "$HOME/github"
 
@@ -168,10 +163,6 @@ initialize() {
         >"$HOME/.config/lazygit/config.yml" ||
         die "${red}Failed lazygit merge${no_color}"
 
-    yq ". *= load(\"$HOME/.config/gh-dash/options.yml\")" "$HOME/.config/omacase/current/theme/gh-dash.yml" \
-        >"$HOME/.config/gh-dash/config.yml" ||
-        die "${red}Failed gh-dash merge${no_color}"
-
     /opt/homebrew/bin/brew services restart borders sketchybar
 }
 
@@ -185,6 +176,7 @@ finish() {
     log "${red}Remember to follow the post-install instructions in the README to finish the setup. Enjoy!${no_color}"
 }
 
+log "${red}This will WIPE all configurations and brew installations previously on your system. Press ^C to break.${no_color}"
 detect_requirements
 install_brew
 clone_dots
@@ -195,7 +187,6 @@ remove_unwanted
 configure_git
 write_macos_settings
 install_yazi_extensions
-install_gh_extensions
 initialize
 start_apps
 finish
